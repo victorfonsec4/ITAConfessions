@@ -1,4 +1,8 @@
 # Django settings for ITAConfessions project.
+import os.path
+
+PROJECT_DIR = os.path.dirname(__file__)
+templatesDir = os.path.join(PROJECT_DIR, "templates")
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -65,11 +69,13 @@ STATIC_ROOT = ''
 
 # URL prefix for static files.
 # Example: "http://example.com/static/", "http://static.example.com/"
-STATIC_URL = '/home/victor/sites/ITAConfessions/ITAConfessions/ITAConfessions/templates/assets/'
+#STATIC_URL = '/home/victor/sites/ITAConfessions/ITAConfessions/ITAConfessions/templates/assets/'
 
+STATIC_URL = templatesDir + '/assets/'
 # Additional locations of static files
 STATICFILES_DIRS = (
-	"/home/victor/sites/ITAConfessions/ITAConfessions/ITAConfessions/templates/assets/",
+	#"/home/victor/sites/ITAConfessions/ITAConfessions/ITAConfessions/templates/assets/",
+	templatesDir + '/assets/',
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -109,7 +115,8 @@ ROOT_URLCONF = 'ITAConfessions.urls'
 WSGI_APPLICATION = 'ITAConfessions.wsgi.application'
 
 TEMPLATE_DIRS = (
-	"/home/victor/sites/ITAConfessions/ITAConfessions/ITAConfessions/templates"
+	#"/home/victor/sites/ITAConfessions/ITAConfessions/ITAConfessions/templates"
+    templatesDir,
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
